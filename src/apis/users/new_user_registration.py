@@ -45,7 +45,7 @@ class NewUserRegistration(APIView):
                     credential.save()
                     
                     #Handle Email
-                    verification_link = request.build_absolute_uri(f"/users/api/verify/{user.email}/{user.verification_uuid}/")
+                    verification_link = request.build_absolute_uri(f"/api/users/verify/{user.email}/{user.verification_uuid}/")
                     body = render_to_string("verify_email_template.html", {"name": user.name, "verification_link": verification_link})
                     subject = "Verify Your Email - Prosar Prioritiser"
                     EmailUtil.send(to_email = user.email, subject = subject, body = body)
