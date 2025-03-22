@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verified - Prosar Prioritiser</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 500px;
+            background: #ffffff;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 0px;
+        }
+
+        .success-icon {
+            font-size: 50px;
+            color: #28a745;
+        }
+
+        .message {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .sub-message {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .home-button {
+            display: inline-block;
+            background: #333;
+            color: #ffffff;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .home-button:hover {
+            background: #222;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            padding: 20px;
+            background: #ffffff;
+            border-top: 1px solid #ddd;
+            margin-top: 50px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        Prosar Prioritiser
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="success-icon">
+            {% if icon == "success" %}✅
+            {% elif icon == "error" %}❌
+            {% elif icon == "info" %}ℹ️
+            {% else %}❓
+            {% endif %}
+        </div>
+        <div class="message">{{title|safe}}</div>
+        <div class="sub-message">
+            <br><br>{{body|safe}}<br><br><br><br>
+        </div>
+        <a href="/" class="home-button">Go to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Prosar Prioritiser. All rights reserved.
+    </div>
+
+</body>
+</html>

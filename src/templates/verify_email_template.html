@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            margin: 40px auto;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        .logo {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+        .header {
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .message {
+            font-size: 18px;
+            color: #666;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .verify-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #007BFF, #00BFFF);
+            color: #ffffff;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .verify-button:hover {
+            background: linear-gradient(135deg, #0056b3, #008cff);
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .social-icons {
+            margin-top: 15px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .social-icons img {
+            width: 28px;
+            height: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Prosar Prioritiser Logo" class="logo">
+        <div class="header">Welcome to Prosar Prioritiser!</div>
+        <div class="message">
+            Hello <strong>{{ name }}</strong>,<br><br>
+            We are excited to have you join us! To get started, please verify your email address by clicking the button below:
+        </div>
+        <a href="{{ verification_link }}" class="verify-button">Verify My Email</a>
+        <div class="footer">
+            If you didn’t sign up for Prosar Prioritiser, please ignore this email.<br>
+            <div class="social-icons">
+                <a href="https://facebook.com/prosar"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+                <a href="https://twitter.com/prosar"><img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Twitter"></a>
+                <a href="https://linkedin.com/company/prosar"><img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

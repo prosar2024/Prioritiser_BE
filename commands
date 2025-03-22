@@ -1,0 +1,12 @@
+python -m venv prioritiser_local
+prioritiser_local\Scripts\activate.bat
+pip install django
+pip install python-dotenv
+
+django-admin startproject prioritiser
+pip install djangorestframework
+django-admin startapp src
+
+pip install djangorestframework-simplejwt
+pip install django-rest-framework-simplejwt
+pip install django-cors-headers
