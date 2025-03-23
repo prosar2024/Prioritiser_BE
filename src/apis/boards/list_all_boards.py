@@ -26,7 +26,9 @@ class ListAllBoards(APIView):
             result.append({
                 "name": board.name,
                 "description": board.description,
-                "owner": collb.owner,
+                "is_owner": collb.owner,
+                "owner_name": next((c.user.name for c in collaborators_qs if c.owner), None),
+                "created_on" : board.created_time,
                 "collaborators": collaborators
             })
         return HttpUtil.respond(200, None, result)
