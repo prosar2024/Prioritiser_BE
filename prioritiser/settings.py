@@ -33,6 +33,7 @@ TOKEN_EXPIRY_TIME_IN_MINUTES = 10
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Frontend React URL
+    "http://prioritiser.prosartech.com"
 ]
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
