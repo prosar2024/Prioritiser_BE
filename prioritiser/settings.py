@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from corsheaders.defaults import default_headers
 
 load_dotenv()
 
@@ -32,6 +33,11 @@ TOKEN_EXPIRY_TIME_IN_MINUTES = 10
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Frontend React URL
+]
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'email',
+    'token',
 ]
 
 INSTALLED_APPS = [

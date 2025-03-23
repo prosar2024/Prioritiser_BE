@@ -20,7 +20,7 @@ class Authenticate(APIView):
             elif cred.locked:
                 return HttpUtil.respond(400, 'User account us locked, please contact system admin')    
             elif not cred.user.email_verified:
-                return HttpUtil.respond(400, 'Email is not verified. Please verify your account first.')    
+                return HttpUtil.respond(400, 'Please verify your email first to login.')    
             elif(cred.password != password):
                 if(cred.failed_login_count >= 3):
                     cred.locked = True
@@ -31,7 +31,7 @@ class Authenticate(APIView):
                 cred.token = uuid.uuid4()
                 cred.token_generated_time = timezone.now()
                 cred.save()
-                return HttpUtil.respond(200, 'Token Generated', {'token' : cred.token, 'email' : email})
+                return HttpUtil.respond(200, 'Token Generated', {'token' : cred.token, 'email' : email, 'name' : cred.user.name})
 
         except Exception as e0: 
             return HttpUtil.respond(500, str(e0))
