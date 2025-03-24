@@ -22,8 +22,7 @@ class FetchBoardInfo(APIView):
                 collaborators.append({
                     "name": c.user.name,
                     "email": c.user.email,
-                    "owner": c.owner,
-                    "accepted": c.accepted
+                    "owner": c.owner
                 })
 
             result = {

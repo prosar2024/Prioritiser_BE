@@ -6,7 +6,6 @@ class Collaborators(models.Model):
     board = models.ForeignKey(Boards, on_delete=models.CASCADE, related_name='collaborators')
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
     creation_time = models.DateTimeField(auto_now_add=True)
-    accepted = models.BooleanField(default=False)
     retired = models.BooleanField(default=False)
     owner = models.BooleanField(default=False)
 

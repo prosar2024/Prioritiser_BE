@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            margin: 40px auto;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        .logo {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+        .header {
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .message {
+            font-size: 18px;
+            color: #666;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .social-icons {
+            margin-top: 15px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .social-icons img {
+            width: 28px;
+            height: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Prosar Prioritiser Logo" class="logo">
+        <div class="header">You are added as a collaborator!</div>
+        <div class="message">
+            Hi <strong>{{ name }},</strong> <br>
+            You’ve been added as a collaborator on the board <b>'{{board}}'</b> by {{owner}}. You can now access the board and start contributing.
+        </div>
+        <div class="footer">
+            If you didn’t sign up for Prosar Prioritiser, please ignore this email.<br>
+            <div class="social-icons">
+                <a href="https://facebook.com/prosar"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+                <a href="https://twitter.com/prosar"><img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Twitter"></a>
+                <a href="https://linkedin.com/company/prosar"><img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

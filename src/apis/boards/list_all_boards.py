@@ -17,8 +17,7 @@ class ListAllBoards(APIView):
                 {
                     "name": c.user.name,
                     "email": c.user.email,
-                    "owner": c.owner,
-                    "accepted": c.accepted
+                    "owner": c.owner
                 }
                 for c in collaborators_qs
             ]
