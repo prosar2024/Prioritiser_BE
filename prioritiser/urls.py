@@ -8,6 +8,7 @@ from src.apis.users.get_user_info import GetUserInfo
 from src.apis.boards.eligible_collabrators import EligibleCollabtors
 from src.apis.boards.create_new_board import CreateNewBoard
 from src.apis.boards.list_all_boards import ListAllBoards
+from src.apis.boards.fetch_board_info import FetchBoardInfo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -21,4 +22,5 @@ urlpatterns = [
     path('api/boards/eligiblecollaborators/', EligibleCollabtors.as_view(), name='fetch all eligible collabrators'),
     path('api/boards/createnewboard/', CreateNewBoard.as_view(), name='create-new-board'),
     path('api/boards/listallboards/', ListAllBoards.as_view(), name='list-all-boards'),
+    path('api/boards/fetch/<str:board_id>', FetchBoardInfo.as_view(), name='fetch-board-info'),
 ]

@@ -56,5 +56,4 @@ class NewUserRegistration(APIView):
                     return HttpUtil.respond(400, errors, None)
             
         except Exception as e0: 
-            raise e0
             return HttpUtil.respond(500, str(e0))
