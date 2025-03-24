@@ -14,7 +14,7 @@ urlpatterns = [
     
     path('api/users/register/', NewUserRegistration.as_view(), name='register-user'),
     path('api/users/verify/<str:email>/<str:uuid_str>/', VerifyEmail.as_view(), name='verify-email'),
-    path('api/users/tempverify/<str:email>/', VerifyEmailTemp.as_view(), name='verify-email'), # -->>>> TEMP - Remove this later
+    path('tempverify/<str:email>/', VerifyEmailTemp.as_view(), name='verify-email'), # -->>>> TEMP - Remove this later
     path('api/users/authenticate/', Authenticate.as_view(), name='authenticate-credentials'),
     path('api/users/getuserinfo/', GetUserInfo.as_view(), name='get-user-info'),
         

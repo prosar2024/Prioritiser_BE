@@ -11,9 +11,10 @@ import traceback
 '''
 class Authenticate():
     excluded_urls = [
+      "/tempverify/", # REMOVE this later
+      
       "api/users/register/",
       "api/users/verify/",
-      "api/users/tempverify/", # REMOVE this later
       "api/users/authenticate/",
     ]
 
