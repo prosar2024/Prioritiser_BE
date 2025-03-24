@@ -27,7 +27,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("EMAIL_USERNAME")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
-IS_PROD = False
+IS_PROD = True
 
 FRONTEND_DOMAIN = "prioritiser.prosartech.com" if IS_PROD else "localhost"
 FRONTEND_URL = "http://prioritiser.prosartech.com" if IS_PROD else "http://localhost:5173"
