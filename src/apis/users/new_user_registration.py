@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from src.util.http_util import HttpUtil
 from src.models.users import Users
 from django.db import transaction
+import os
 
 class NewUserRegistration(APIView):
 

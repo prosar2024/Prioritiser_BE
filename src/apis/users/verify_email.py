@@ -1,7 +1,8 @@
 from rest_framework.views import APIView
 from django.shortcuts import render
 from src.models.users import Users
-import uuid
+from django.conf import settings
+
 
 class VerifyEmail(APIView):
 
@@ -52,4 +53,5 @@ class VerifyEmail(APIView):
                 'body' : 'Oops, Something failed in between. Please contact system admin if the issue persists.'
             }
         
+        content['login_page_url'] = settings.FRONTEND_URL+"/login"
         return render(request, "email_verification_confirmation_template.html", content)

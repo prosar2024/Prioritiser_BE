@@ -2,7 +2,6 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 from corsheaders.defaults import default_headers
-
 load_dotenv()
 
 
@@ -18,6 +17,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ROOT_URLCONF = 'prioritiser.urls'
 WSGI_APPLICATION = 'prioritiser.wsgi.application'
 CORS_ALLOW_ALL_ORIGINS = True  
+TOKEN_EXPIRY_TIME_IN_MINUTES = 10
+
 
 #Email Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -27,15 +28,18 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("EMAIL_USERNAME")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
-ALLOWED_HOSTS = []
 
-TOKEN_EXPIRY_TIME_IN_MINUTES = 10
+IS_PROD = True
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Frontend React URL
-    "http://prioritiser.prosartech.com"
+FRONTEND_DOMAIN = "prioritiser.prosartech.com" if IS_PROD else "localhost"
+FRONTEND_URL = "http://prioritiser.prosartech.com" if IS_PROD else "http://localhost:5173"
+
+ALLOWED_HOSTS = [
+    FRONTEND_DOMAIN
 ]
-
+CORS_ALLOWED_ORIGINS = [
+    FRONTEND_URL
+]
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'email',
     'token',

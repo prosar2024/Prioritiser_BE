@@ -24,6 +24,7 @@ class ListAllBoards(APIView):
             ]
 
             result.append({
+                "board_id": board.board_id,
                 "name": board.name,
                 "description": board.description,
                 "is_owner": collb.owner,
