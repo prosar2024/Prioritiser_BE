@@ -13,6 +13,7 @@ class Authenticate():
     excluded_urls = [
       "api/users/register/",
       "api/users/verify/",
+      "api/users/tempverify/", # REMOVE this later
       "api/users/authenticate/",
     ]
 

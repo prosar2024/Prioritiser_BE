@@ -21,15 +21,24 @@ TOKEN_EXPIRY_TIME_IN_MINUTES = 10
 
 
 #Email Configuration
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = os.getenv("EMAIL_USERNAME")
+# EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
+
+#Zoho Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv("EMAIL_USERNAME")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
+EMAIL_HOST_USER = 'admin@prosartech.com'
+EMAIL_HOST_PASSWORD = ''#os.getenv("EMAIL_PASSWORD")
 
 
-IS_PROD = True
+
+IS_PROD = False
 
 FRONTEND_DOMAIN = "prioritiser.prosartech.com" if IS_PROD else "localhost"
 FRONTEND_URL = "http://prioritiser.prosartech.com" if IS_PROD else "http://localhost:5173"

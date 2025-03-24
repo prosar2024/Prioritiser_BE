@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from src.apis.users.new_user_registration import NewUserRegistration
 from src.apis.users.verify_email import VerifyEmail
+from src.apis.users.verify_email_temp import VerifyEmailTemp #TEMP - Remove this later
 from src.apis.users.authenticate import Authenticate
 from src.apis.users.get_user_info import GetUserInfo
 from src.apis.boards.eligible_collabrators import EligibleCollabtors
@@ -13,6 +14,7 @@ urlpatterns = [
     
     path('api/users/register/', NewUserRegistration.as_view(), name='register-user'),
     path('api/users/verify/<str:email>/<str:uuid_str>/', VerifyEmail.as_view(), name='verify-email'),
+    path('api/users/tempverify/<str:email>/', VerifyEmailTemp.as_view(), name='verify-email'), # -->>>> TEMP - Remove this later
     path('api/users/authenticate/', Authenticate.as_view(), name='authenticate-credentials'),
     path('api/users/getuserinfo/', GetUserInfo.as_view(), name='get-user-info'),
         

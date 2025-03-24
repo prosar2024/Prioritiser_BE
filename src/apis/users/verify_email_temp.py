@@ -2,13 +2,13 @@ from rest_framework.views import APIView
 from django.shortcuts import render
 from src.models.users import Users
 from django.conf import settings
-import uuid
 
 
-class VerifyEmail(APIView):
+class VerifyEmailTemp(APIView):
 
-    def get(self, request, email, uuid_str):
+    def get(self, request, email):
         try:
+            print(email)
             users = Users.objects.filter(email=email)
             if(not users.exists()):
                 content = {
@@ -32,21 +32,14 @@ class VerifyEmail(APIView):
                             'body' : 'Hello <b>{}</b>, <br><br>Your email has been already verified. <br>You can access all features of Prosar Prioritiser.'.format(user.name)
                         }
                     else:
-                        if(user.verification_uuid != None and user.verification_uuid == uuid.UUID(uuid_str)):
-                            user.email_verified = True
-                            user.verification_uuid = None
-                            user.save()
-                            content = {
-                                'icon' : 'success',
-                                'title' : 'Email Verification Successful',
-                                'body' : 'Hello <b>{}</b>, <br><br>Your email has been successfully verified. <br>You can now access all features of Prosar Prioritiser.'.format(user.name)
-                            }
-                        else:
-                            content = {
-                                'icon' : 'error',
-                                'title' : 'Email Verification Failed',
-                                'body' : 'Hello <b>{}</b>, <br><br>Thats an expired link. Your email has not been verified. '.format(user.name)
-                            }
+                        user.email_verified = True
+                        user.verification_uuid = None
+                        user.save()
+                        content = {
+                            'icon' : 'success',
+                            'title' : 'Email Verification Successful',
+                            'body' : 'Hello <b>{}</b>, <br><br>Your email has been successfully verified. <br>You can now access all features of Prosar Prioritiser.'.format(user.name)
+                        }
         except:
             content = {
                 'icon' : 'error',
