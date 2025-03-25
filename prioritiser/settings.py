@@ -34,6 +34,7 @@ FRONTEND_URL = "http://prioritiser.prosartech.com" if IS_PROD else "http://local
 
 ALLOWED_HOSTS = [
     FRONTEND_DOMAIN
+    'api-prioritiser.prosartech.com'
 ]
 CORS_ALLOWED_ORIGINS = [
     FRONTEND_URL
